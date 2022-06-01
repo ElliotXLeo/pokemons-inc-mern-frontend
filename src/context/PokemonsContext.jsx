@@ -20,7 +20,7 @@ export const PokemonsProvider = ({ children }) => {
       //   url: pokemon.image
       // };
       const form = new FormData();
-      for (let key in pokemon) {
+      for (const key in pokemon) {
         form.append(key, pokemon[key]);
       }
       const options = {
@@ -30,17 +30,14 @@ export const PokemonsProvider = ({ children }) => {
         },
         // data: pokemon,
         data: form,
-        url: `${process.env.REACT_APP_POKEMON_INC_MERN_API}/pokemons`
+        url: `${process.env.REACT_APP_POKEMONS_INC_MERN_API_URL}/pokemons`
       };
       const { data } = await axios(options);
-      setPokemons([
-        ...pokemons,
-        data
-      ]);
+      setPokemons([...pokemons, data]);
       showToast('✅', 'Creado');
-      navigate('/');
+      navigate('/pokemons');
     } catch (error) {
-      console.log(error.response.data.message);
+      showToast('❌', error.response.data.message);
     } finally {
       setLoading(false);
     }
@@ -51,12 +48,12 @@ export const PokemonsProvider = ({ children }) => {
       setLoading(true);
       const options = {
         method: 'GET',
-        url: `${process.env.REACT_APP_POKEMON_INC_MERN_API}/pokemons`
+        url: `${process.env.REACT_APP_POKEMONS_INC_MERN_API_URL}/pokemons`
       };
       const { data } = await axios(options);
       setPokemons(data);
     } catch (error) {
-      console.log(error.response.data.message);
+      showToast('❌', error.response.data.message);
     } finally {
       setLoading(false);
     }
@@ -67,13 +64,13 @@ export const PokemonsProvider = ({ children }) => {
       setLoading(true);
       const options = {
         method: 'GET',
-        url: `${process.env.REACT_APP_POKEMON_INC_MERN_API}/pokemons/${_id}`
+        url: `${process.env.REACT_APP_POKEMONS_INC_MERN_API_URL}/pokemons/${_id}`
       };
       const { data } = await axios(options);
       setPokemon(data);
       showToast('📚', 'Leído');
     } catch (error) {
-      console.log(error.response.data.message);
+      showToast('❌', error.response.data.message);
     } finally {
       setLoading(false);
     }
@@ -87,7 +84,7 @@ export const PokemonsProvider = ({ children }) => {
       //   url: pokemon.image
       // };
       const form = new FormData();
-      for (let key in pokemon) {
+      for (const key in pokemon) {
         form.append(key, pokemon[key]);
       }
       const options = {
@@ -97,7 +94,7 @@ export const PokemonsProvider = ({ children }) => {
         },
         // data: pokemon,
         data: form,
-        url: `${process.env.REACT_APP_POKEMON_INC_MERN_API}/pokemons/${pokemon._id}`
+        url: `${process.env.REACT_APP_POKEMONS_INC_MERN_API_URL}/pokemons/${pokemon._id}`
       };
       const { data } = await axios(options);
       setPokemons(pokemons.map((pokemon) => {
@@ -105,9 +102,9 @@ export const PokemonsProvider = ({ children }) => {
       }));
       setPokemon({});
       showToast('❗', 'Actualizado');
-      navigate('/');
+      navigate('/pokemons');
     } catch (error) {
-      console.log(error.response.data.message);
+      showToast('❌', error.response.data.message);
     } finally {
       setLoading(false);
     }
@@ -118,15 +115,15 @@ export const PokemonsProvider = ({ children }) => {
       setLoading(true);
       const options = {
         method: 'DELETE',
-        url: `${process.env.REACT_APP_POKEMON_INC_MERN_API}/pokemons/${_id}`
+        url: `${process.env.REACT_APP_POKEMONS_INC_MERN_API_URL}/pokemons/${_id}`
       };
       const { data } = await axios(options);
       setPokemons(pokemons.filter((pokemon) => {
         return pokemon._id !== _id;
       }));
-      showToast('❌', data.message);
+      showToast('🗑', data.message);
     } catch (error) {
-      console.log(error.response.data.message);
+      showToast('❌', error.response.data.message);
     } finally {
       setLoading(false);
     }
@@ -150,7 +147,6 @@ export const PokemonsProvider = ({ children }) => {
         loading,
         pokemon,
         pokemons,
-        setPokemons,
         submitPokemonsForm,
         readPokemon,
         deletePokemon

@@ -16,7 +16,7 @@ const Header = ({ applicationName }) => {
               <NavLink
                 to="create"
                 className={({ isActive }) =>
-                  isActive ? "bg-cyan-300 text-black rounded-xl text-xl font-bold px-2 transition-colors" : "rounded-xl text-xl font-bold px-2 transition-colors hover:bg-cyan-300 hover:text-black"
+                  isActive ? "bg-cyan-300 rounded-xl text-black text-xl font-bold px-2" : "rounded-xl text-white text-xl font-bold px-2 transition-colors hover:bg-cyan-300 hover:text-black"
                 }
               >
                 Crear

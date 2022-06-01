@@ -1,6 +1,6 @@
-# [Pokémon Inc MERN Frontend](https://pokemon-inc-mern-frontend.netlify.app) | [<img src="https://i.postimg.cc/dtPYcvbM/youtube.png" alt="YouTube" height="20px"/>](https://www.youtube.com/channel/UCE9whBrtYnLWrpzwk6z_JUA) | [<img src="https://i.postimg.cc/5NBMxTJX/github.png" alt="GitHub" height="20px"/>](https://github.com/ElliotXLeo) | [<img src="https://i.postimg.cc/J7BLFtdc/linkedin.png" alt="Linkedin" height="20px"/>](https://www.linkedin.com/in/elliotgaramendi/) | [<img src="https://i.postimg.cc/sfJtqS4W/instagram.png" alt="Instagram" height="20px"/>](https://www.instagram.com/elliotgaramendi/) | [<img src="https://i.postimg.cc/7YHyZXZX/facebook.png" alt="Facebook" height="20px"/>](https://www.facebook.com/elliotgaramendi) | [<img src="https://i.postimg.cc/65TVxg9t/world-globe.png" alt="Portafolio Web" height="20px"/>](https://elliotxleo.github.io/portafolio-web-elgs/)
+# [Pokémons Inc MERN Frontend](https://pokemons-inc-mern-frontend.netlify.app) | [<img src="https://i.postimg.cc/dtPYcvbM/youtube.png" alt="YouTube" height="20px"/>](https://www.youtube.com/channel/UCE9whBrtYnLWrpzwk6z_JUA) | [<img src="https://i.postimg.cc/5NBMxTJX/github.png" alt="GitHub" height="20px"/>](https://github.com/ElliotXLeo) | [<img src="https://i.postimg.cc/J7BLFtdc/linkedin.png" alt="Linkedin" height="20px"/>](https://www.linkedin.com/in/elliotgaramendi/) | [<img src="https://i.postimg.cc/sfJtqS4W/instagram.png" alt="Instagram" height="20px"/>](https://www.instagram.com/elliotgaramendi/) | [<img src="https://i.postimg.cc/7YHyZXZX/facebook.png" alt="Facebook" height="20px"/>](https://www.facebook.com/elliotgaramendi) | [<img src="https://i.postimg.cc/65TVxg9t/world-globe.png" alt="Portafolio Web" height="20px"/>](https://elliotxleo.github.io/portafolio-web-elgs/)
 
-[![Pokémon Inc MERN Frontend](https://i.postimg.cc/QtKFX0G9/pokemon-inc-mern-frontend.png)](https://pokemon-inc-mern-frontend.netlify.app)
+[![Pokémons Inc MERN Frontend](https://i.postimg.cc/QtKFX0G9/pokemons-inc-mern-frontend.png)](https://pokemons-inc-mern-frontend.netlify.app)
 
 ## 📜 Resumen 📜
 Administrador de Pokémon’s.
@@ -8,8 +8,9 @@ Administrador de Pokémon’s.
 ## 💻 Instalación 💻
 - Ubicarse en la carpeta que contendrá el proyecto
 - Abrir terminal de comandos
-  - git clone https://github.com/ElliotXLeo/pokemon-inc-mern-frontend.git
-  - cd pokemon-inc-mern-frontend
+  - git clone https://github.com/ElliotXLeo/pokemons-inc-mern-frontend.git
+  - cd pokemons-inc-mern-frontend
+  - Crear en "/" el archivo .env.local en base a .env.template
   - npm install
   - npm start
     - Levanta un servidor con la aplicación

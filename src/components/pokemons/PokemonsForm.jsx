@@ -1,8 +1,8 @@
 import * as yup from 'yup';
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import usePokemons from '../../hooks/usePokemons';
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const PokemonsForm = () => {
   const { id } = useParams();
@@ -19,10 +19,8 @@ const PokemonsForm = () => {
 
   useEffect(() => {
     if (id && pokemon._id) {
-      setFormPokemon({
-        ...pokemon,
-        image: pokemon.image?.url
-      });
+      setFormPokemon(pokemon);
+      // setFormPokemon({...pokemon, image: pokemon.image?.url});
     }
   }, [id, pokemon]);
 
@@ -52,37 +50,38 @@ const PokemonsForm = () => {
           >
             <div className="flex flex-col gap-1">
               <Field name="name" type="text" placeholder="Nombre" className="bg-zinc-800 rounded p-2" required />
-              <ErrorMessage name="name" component="div" className="text-rose-500 text-sm" />
+              <ErrorMessage name="name" component="span" className="text-rose-500 text-sm text-center" />
             </div>
             <div className="flex flex-col gap-1">
               <Field name="type" type="text" placeholder="Tipo" className="bg-zinc-800 rounded p-2" required />
-              <ErrorMessage name="type" component="div" className="text-rose-500 text-sm" />
+              <ErrorMessage name="type" component="span" className="text-rose-500 text-sm text-center" />
             </div>
             <div className="flex flex-col gap-1">
               <Field name="hp" type="number" placeholder="Hp" className="bg-zinc-800 rounded p-2" required />
-              <ErrorMessage name="hp" component="div" className="text-rose-500 text-sm" />
+              <ErrorMessage name="hp" component="span" className="text-rose-500 text-sm text-center" />
             </div>
             <div className="flex flex-col gap-1">
               <Field name="attack" type="text" placeholder="Ataque" className="bg-zinc-800 rounded p-2" required />
-              <ErrorMessage name="attack" component="div" className="text-rose-500 text-sm" />
+              <ErrorMessage name="attack" component="span" className="text-rose-500 text-sm text-center" />
             </div>
             <div className="flex flex-col gap-1">
               <Field name="special" type="text" placeholder="Especial" className="bg-zinc-800 rounded p-2" required />
+              <ErrorMessage name="special" component="span" className="text-rose-500 text-sm text-center" />
             </div>
             {/* <div className="flex flex-col gap-1">
               <Field name="image" placeholder="Imagen" className="bg-zinc-800 rounded p-2" required />
-              <ErrorMessage name="image" component="div" className="text-rose-500 text-sm" />
+              <ErrorMessage name="image" component="span" className="text-rose-500 text-sm text-center" />
             </div> */}
             <input
               type="file"
               name="image"
-              className="bg-zinc-800 rounded p-2 text-sm cursor-pointer file:bg-white file:border-0 file:rounded file:text-sm file:font-semibold file:mr-2 file:py-1 file:px-2 file:cursor-pointer file:transition-colors hover:file:bg-zinc-200"
-              onChange={(e) => setFieldValue('image', e.target.files[0])}
+              className="bg-zinc-800 rounded p-2 text-sm cursor-pointer file:bg-white file:border-0 file:rounded file:font-semibold file:mr-2 file:p-1 file:px-2 file:cursor-pointer file:transition-colors hover:file:bg-zinc-300"
+              onChange={(e) => setFieldValue('image', e.currentTarget.files[0])}
               required={id ? false : true}
             />
             <button
               type="submit"
-              className="bg-cyan-300 rounded-md text-black font-medium p-2 cursor-pointer transition-colors hover:bg-white disabled:bg-white/50 disabled:cursor-progress "
+              className="bg-cyan-300 rounded-md text-black font-semibold p-2 transition-colors hover:bg-white disabled:bg-white/50 disabled:cursor-progress"
               disabled={isSubmitting}
             >
               {isSubmitting ? 'Loading 💭' : id ? 'Editar' : 'Crear'}
